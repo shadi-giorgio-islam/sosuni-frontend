@@ -1,0 +1,11 @@
+@import "../../styles/common.css";
+
+.container{
+    background-color: var(--secondocolore);
+}
+
+a{
+    color: var(--quintocolore);
+    padding: 0 10px;
+    font-weight: var(--spessorefont-bold);
+}
