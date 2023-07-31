@@ -4,23 +4,33 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import MenuItem from "@mui/material/MenuItem";
 import {Link} from "react-router-dom";
 import './Navbar.css';
+import {Drawer} from "@mui/material";
+import CloseSharpIcon from '@mui/icons-material/CloseSharp';
 export const Navbar = () => {
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-        null
-    );
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElNav(event.currentTarget);
-    };
+    type Anchor = 'left';
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
+    const [state, setState] = React.useState({
+        top: false,
+        left: false,
+        bottom: false,
+        right: false,
+    });
+    const toggleDrawer =
+        (anchor: Anchor, open: boolean) =>
+            (event: React.KeyboardEvent | React.MouseEvent) => {
+                if (
+                    event.type === 'keydown' &&
+                    ((event as React.KeyboardEvent).key === 'Tab' ||
+                        (event as React.KeyboardEvent).key === 'Shift')
+                ) {
+                    return;
+                }
+
+                setState({ ...state, [anchor]: open });
+            };
 
     return (
             <AppBar position="static" className="appbar">
@@ -43,46 +53,37 @@ export const Navbar = () => {
                         <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                             <IconButton
                                 size="large"
-                                onClick={handleOpenNavMenu}
-                                className="iconButton"
+                                onClick={toggleDrawer('left', true)}
+                                className="iconButtonMenu"
                             >
                                 <MenuIcon />
                             </IconButton>
-                            <Menu
-                                id="menu-appbar"
-                                anchorEl={anchorElNav}
-                                anchorOrigin={{
-                                    vertical: "bottom",
-                                    horizontal: "left",
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: "top",
-                                    horizontal: "left",
-                                }}
-                                open={Boolean(anchorElNav)}
-                                onClose={handleCloseNavMenu}
-                                sx={{
-                                    display: { xs: "block", md: "none" }
-                                }}
+                            <Drawer
+                                anchor='left'
+                                open={state['left']}
+                                onClose={toggleDrawer('left', false)}
                             >
-                                <MenuItem key='Home' onClick={handleCloseNavMenu}>
-                                    <Link to="/">Home</Link>
-                                </MenuItem>
-                                <MenuItem key='Gruppi' onClick={handleCloseNavMenu}>
-                                    <Link to="/Gruppi">Gruppi</Link>
-                                </MenuItem>
-                                <MenuItem key='Tools' onClick={handleCloseNavMenu}>
-                                    <Link to="/Tools">Tools</Link>
-                                </MenuItem>
-                                <MenuItem key='Blog' onClick={handleCloseNavMenu}>
-                                    <Link to="/Blog">Blog</Link>
-                                </MenuItem>
-                                <MenuItem key='About' onClick={handleCloseNavMenu}>
-                                    <Link to="/About">About</Link>
-                                </MenuItem>
+                                <Typography
+                                    component="a"
+                                    href="/"
+                                    className="logo"
+                                >
+                                    <img
+                                        src="./logo.png"
+                                        alt="logo non trovato"
+                                        height="70px"/>
+                                </Typography>
+                                <Link to="/">Home</Link>
+                                <Link to="/Gruppi">Gruppi</Link>
+                                <Link to="/Tools">Tools</Link>
+                                <Link to="/Blog">Blog</Link>
+                                <Link to="/About">About</Link>
+                                <IconButton size="large" onClick={toggleDrawer('left', false)} className="iconButtonClose">
+                                    <CloseSharpIcon fontSize="inherit" />
+                                </IconButton>
+                            </Drawer>
 
-                            </Menu>
+
                         </Box>
                         <Typography
                             variant="h5"
