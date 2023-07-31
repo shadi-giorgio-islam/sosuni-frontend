@@ -23,8 +23,7 @@ export const Navbar = () => {
     };
 
     return (
-            <AppBar position="static">
-                <Container maxWidth="xl" className="container">
+            <AppBar position="static" className="appbar">
                     <Toolbar disableGutters>
                         <Typography
                             noWrap
@@ -44,11 +43,8 @@ export const Navbar = () => {
                         <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                             <IconButton
                                 size="large"
-                                aria-label="account of current user"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
                                 onClick={handleOpenNavMenu}
-                                color="inherit"
+                                className="iconButton"
                             >
                                 <MenuIcon />
                             </IconButton>
@@ -67,10 +63,9 @@ export const Navbar = () => {
                                 open={Boolean(anchorElNav)}
                                 onClose={handleCloseNavMenu}
                                 sx={{
-                                    display: { xs: "block", md: "none" },
+                                    display: { xs: "block", md: "none" }
                                 }}
                             >
-
                                 <MenuItem key='Home' onClick={handleCloseNavMenu}>
                                     <Link to="/">Home</Link>
                                 </MenuItem>
@@ -115,7 +110,6 @@ export const Navbar = () => {
                         </Box>
 
                     </Toolbar>
-                </Container>
             </AppBar>
     );
 }

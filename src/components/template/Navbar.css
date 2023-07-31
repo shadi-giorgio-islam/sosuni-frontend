@@ -1,11 +1,15 @@
 @import "../../styles/common.css";
 
-.container{
-    background-color: var(--secondocolore);
+.appbar{
+    background-color: var(--secondocolore) !important;
 }
 
 a{
     color: var(--quintocolore);
     padding: 0 10px;
     font-weight: var(--spessorefont-bold);
+}
+
+.iconButton{
+    color: var(--quintocolore) !important;
 }
