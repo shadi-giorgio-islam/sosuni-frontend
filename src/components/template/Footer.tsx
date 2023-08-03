@@ -56,7 +56,7 @@ export const Footer = () => {
                 <Box mt={5}>
                     <Typography variant="body2" align="center">
                         {"Copyright © "}
-                        <Link href="https://your-website.com/">
+                        <Link href="https://www.google.com/">
                             Your Website
                         </Link>{" "}
                         {new Date().getFullYear()}
