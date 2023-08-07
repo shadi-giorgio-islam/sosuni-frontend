@@ -1,5 +1,9 @@
 @import "../../styles/common.css";
-
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 .box{
     background-color: var(--secondocolore);
     padding-bottom: 40px;
