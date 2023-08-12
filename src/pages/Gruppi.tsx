@@ -1,12 +1,12 @@
 import Template from "../components/template/Template";
 import React from "react";
-import SearchBar from "../components/searchBar/SearchBar";
+import Accordion from "../components/accordion/Accordion";
 
 export const Gruppi = () => {
     return (
         <Template>
             <h1>Gruppi</h1>
-            <SearchBar/>
+            <Accordion/>
         </Template>
     );
 }
