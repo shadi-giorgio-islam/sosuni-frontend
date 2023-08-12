@@ -4,6 +4,7 @@ import Exam from "./entity/Exam";
 import Course from "./entity/Course";
 import {generateUniversities} from "./function/GenerateUniversities";
 import {useState} from "react";
+import "./Accordion.css";
 
 
 const universitiesData = generateUniversities(20);
@@ -69,7 +70,7 @@ const UniversityAccordion: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className="accordion">
             {universitiesData.map((university) => (
                 <Accordion
                     key={university.id}

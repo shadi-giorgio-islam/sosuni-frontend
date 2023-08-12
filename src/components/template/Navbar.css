@@ -1,7 +1,10 @@
 @import "../../styles/common.css";
 
 .appbar{
+    position: fixed !important;
+    top: 0;
     background-color: var(--secondocolore) !important;
+    z-index: 1;
 }
 
 a{

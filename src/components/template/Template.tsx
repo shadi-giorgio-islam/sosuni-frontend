@@ -1,6 +1,7 @@
 import {Navbar} from "./Navbar";
 import {Footer} from "./Footer";
 import React from "react";
+import "./Template.css";
 
 const Template = ({ children }: any) => {
     return (
