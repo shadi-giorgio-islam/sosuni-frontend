@@ -1,10 +1,10 @@
 import Exam from "../entity/Exam";
 
 
-export const generateExams = (count: number, courseId: number): Exam[] => {
+export const generateExams = (numExams: number): Exam[] => {
     const exams: Exam[] = [];
-    for (let i = 1; i <= count; i++) {
-        exams.push(new Exam(i, `Exam ${courseId}-${i}`));
+    for (let i = 1; i <= numExams; i++) {
+        exams.push(new Exam(i, `Esame ${i}`));
     }
     return exams;
 };

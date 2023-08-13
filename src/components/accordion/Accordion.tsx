@@ -7,7 +7,7 @@ import {useState} from "react";
 import "./Accordion.css";
 
 
-const universitiesData = generateUniversities(20);
+const universitiesData = generateUniversities(20, 30, 20);
 
 // Componente per l'accordo dell'esame
 interface ExamAccordionProps {

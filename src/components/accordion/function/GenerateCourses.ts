@@ -1,12 +1,10 @@
 import Course from "../entity/Course";
 import {generateExams} from "./GenerateExams";
 
-export const generateCourses = (count: number, universityId: number): Course[] => {
+export const generateCourses = (numCourses: number, numExamsPerCourse: number): Course[] => {
     const courses: Course[] = [];
-    for (let i = 1; i <= count; i++) {
-        const courseId = (universityId - 1) * count + i;
-        const exams = generateExams(20, courseId);
-        courses.push(new Course(courseId, `Course ${courseId}`, exams));
+    for (let i = 1; i <= numCourses; i++) {
+        courses.push(new Course(i, `Corso di Laurea ${i}`, generateExams(numExamsPerCourse)));
     }
     return courses;
 };
