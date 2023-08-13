@@ -15,8 +15,8 @@ interface ExamAccordionProps {
 }
 
 const ExamAccordion: React.FC<ExamAccordionProps> = ({ exam }) => (
-    <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+    <Accordion className="accordion-component">
+        <AccordionSummary expandIcon={<ExpandMoreIcon className="accordion-icon" />} className="accordion-summary">
             <Typography>{exam.name}</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -32,24 +32,28 @@ interface CourseAccordionProps {
     course: Course;
 }
 
-const CourseAccordion: React.FC<CourseAccordionProps> = ({ course }) => {
-    const [isExpanded, setIsExpanded] = useState(false); // Stato di espansione
+interface CourseAccordionProps {
+    course: Course;
+}
 
-    const handleExpand = () => {
-        setIsExpanded(true); // Imposta lo stato di espansione su true al clic
+const CourseAccordion: React.FC<CourseAccordionProps> = ({ course }) => {
+    const [expanded, setExpanded] = useState(false);
+
+    const toggleExpanded = () => {
+        setExpanded((prevExpanded) => !prevExpanded);
     };
 
     return (
-        <Accordion expanded={isExpanded} onChange={handleExpand}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <Accordion expanded={expanded} onChange={toggleExpanded} className="accordion-component">
+            <AccordionSummary expandIcon={<ExpandMoreIcon className="accordion-icon" />} className="accordion-summary">
                 <Typography>{course.name}</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>
                     Dettagli del corso: Descrizione, docenti, ecc.
                 </Typography>
-                {/* Nidificazione del componente Accordion per gli esami solo se l'accordo è espanso */}
-                {isExpanded &&
+                {/* Nidificazione del componente Accordion per gli esami */}
+                {expanded &&
                     course.exams.map((exam) => (
                         <ExamAccordion key={exam.id} exam={exam} />
                     ))}
@@ -76,8 +80,9 @@ const UniversityAccordion: React.FC = () => {
                     key={university.id}
                     expanded={expanded.includes(university.id)}
                     onChange={() => handleExpand(university.id)}
+                    className="accordion-component"
                 >
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon className="accordion-icon" />} className="accordion-summary">
                         <Typography>{university.name}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
