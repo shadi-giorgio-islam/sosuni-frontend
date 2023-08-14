@@ -1,0 +1,20 @@
+.groupSection {
+    background-color: var(--quintocolore);
+    color: white;
+    padding: 40px 0;
+}
+
+.description {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.buttonContainer {
+    margin-top: 10px;
+}
+
+.sectionButton {
+    color: var(--quintocolore) !important;
+    background-color: var(--primocolore) !important;
+    font-weight: var(--spessorefont-bold) !important;
+}
