@@ -75,7 +75,6 @@ export const Navbar = () => {
                                 </Typography>
                                 <Link to="/">Home</Link>
                                 <Link to="/Gruppi">Gruppi</Link>
-                                <Link to="/Tools">Tools</Link>
                                 <Link to="/Blog">Blog</Link>
                                 <Link to="/About">About</Link>
                                 <IconButton size="large" onClick={toggleDrawer('left', false)} className="iconButtonClose">
@@ -105,7 +104,6 @@ export const Navbar = () => {
                         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                             <Link to="/">Home</Link>
                             <Link to="/Gruppi">Gruppi</Link>
-                            <Link to="/Tools">Tools</Link>
                             <Link to="/Blog">Blog</Link>
                             <Link to="/About">About</Link>
                         </Box>

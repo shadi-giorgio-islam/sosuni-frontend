@@ -1,10 +1,11 @@
 import Template from "../components/template/Template";
 import React from "react";
+import Banner from "../components/Banner/Banner";
 
 export const Home = () => {
     return (
         <Template>
-            <h1>Home</h1>
+            <Banner/>
         </Template>
     );
 }

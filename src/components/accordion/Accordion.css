@@ -19,3 +19,18 @@
 .accordion-icon {
     color: var(--quintocolore) !important;
 }
+
+.whatsapp{
+    background-color: #25D366 !important;
+    color: white !important;
+}
+
+.facebook{
+    background-color: #1877F2 !important;
+    color: white !important;
+}
+
+.telegram{
+    background-color: #0088CC !important;
+    color: white !important;
+}

@@ -1,10 +1,14 @@
-import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
+import {Accordion, AccordionSummary, AccordionDetails, Typography, Button} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TelegramIcon from '@mui/icons-material/Telegram';
 import Exam from "./entity/Exam";
 import Course from "./entity/Course";
 import {generateUniversities} from "./function/GenerateUniversities";
 import {useState} from "react";
 import "./Accordion.css";
+import Grid from "@mui/material/Grid";
 
 
 const universitiesData = generateUniversities(20, 30, 20);
@@ -20,9 +24,44 @@ const ExamAccordion: React.FC<ExamAccordionProps> = ({ exam }) => (
             <Typography>{exam.name}</Typography>
         </AccordionSummary>
         <AccordionDetails>
-            <Typography>
-                Dettagli dell'esame: Data, risultati, ecc.
-            </Typography>
+            <Grid container spacing={2} justifyContent="center">
+                <Grid item>
+                    <Button
+                        variant="contained"
+                        startIcon={<WhatsAppIcon />}
+                        className="whatsapp"
+                        href={`https://chat.whatsapp.com/`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        WhatsApp
+                    </Button>
+                </Grid>
+                <Grid item>
+                    <Button
+                        variant="contained"
+                        startIcon={<FacebookIcon />}
+                        className="facebook"
+                        href={`https://www.facebook.com/groups/create/`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Facebook
+                    </Button>
+                </Grid>
+                <Grid item>
+                    <Button
+                        variant="contained"
+                        startIcon={<TelegramIcon />}
+                        className="telegram"
+                        href={`https://t.me/joinchat/`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Telegram
+                    </Button>
+                </Grid>
+            </Grid>
         </AccordionDetails>
     </Accordion>
 );
@@ -49,10 +88,6 @@ const CourseAccordion: React.FC<CourseAccordionProps> = ({ course }) => {
                 <Typography>{course.name}</Typography>
             </AccordionSummary>
             <AccordionDetails>
-                <Typography>
-                    Dettagli del corso: Descrizione, docenti, ecc.
-                </Typography>
-                {/* Nidificazione del componente Accordion per gli esami */}
                 {expanded &&
                     course.exams.map((exam) => (
                         <ExamAccordion key={exam.id} exam={exam} />
@@ -86,10 +121,6 @@ const UniversityAccordion: React.FC = () => {
                         <Typography>{university.name}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography>
-                            Dettagli dell'università: Indirizzo, contatti, ecc.
-                        </Typography>
-                        {/* Nidificazione del componente Accordion per i corsi solo se l'università è espansa */}
                         {expanded.includes(university.id) &&
                             university.courses.map((course) => (
                                 <CourseAccordion key={course.id} course={course} />
