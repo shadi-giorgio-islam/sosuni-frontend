@@ -9,7 +9,7 @@ import './Footer.css';
 
 export const Footer = () => {
     return (
-        <Box component="footer" className="box">
+        <Box className="box">
             <Container maxWidth="lg">
                 <Grid container spacing={5}>
                     <Grid item xs={12} sm={4}>

@@ -5,7 +5,7 @@ import "./Template.css";
 
 const Template = ({ children }: any) => {
     return (
-        <div>
+        <div className="template">
             <header>
                 <Navbar/>
             </header>
