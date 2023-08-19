@@ -1,10 +1,11 @@
 import Template from "../components/template/Template";
 import React from "react";
+import {BlogPagination} from "../components/blogPagination/BlogPagination";
 
 export const Blog = () => {
     return (
         <Template>
-            <h1>Blog</h1>
+            <BlogPagination/>
         </Template>
     );
 }
