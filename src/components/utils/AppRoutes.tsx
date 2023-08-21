@@ -4,6 +4,7 @@ import {Gruppi} from "../../pages/Gruppi";
 import {Blog} from "../../pages/Blog";
 import {About} from "../../pages/About";
 import React from "react";
+import ArticlePage from "../../pages/ArticlePage";
 
 export const AppRoutes = () => {
     return (
@@ -12,6 +13,7 @@ export const AppRoutes = () => {
             <Route path="/Gruppi" element={<Gruppi/>} />
             <Route path="/Blog" element={<Blog/>} />
             <Route path="/About" element={<About/>} />
+            <Route path="/article/:id" element={<ArticlePage/>}/>
         </Routes>
     );
 }

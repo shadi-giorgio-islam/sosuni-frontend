@@ -2,6 +2,7 @@ import React from 'react';
 import Article from "./entity/Article";
 import {Card, CardContent, CardMedia} from "@mui/material";
 import Typography from "@mui/material/Typography";
+import {Link} from "react-router-dom";
 
 interface ArticleListProps {
     articles: Article[];
@@ -11,7 +12,8 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
     return (
         <div>
             {articles.map((article) => (
-                <Card key={article.id} sx={{ display: 'flex', marginBottom: '20px' }}>
+                <Link to={`/article/${article.id}`} style={{ textDecoration: 'none' }}>
+                    <Card key={article.id} sx={{ display: 'flex', marginBottom: '20px' }}>
                     <CardMedia
                         component="img"
                         alt={`Immagine per ${article.title}`}
@@ -27,7 +29,8 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
                             {article.content.substring(0, 150)}{article.content.length > 150 ? "..." : ""}
                         </Typography>
                     </CardContent>
-                </Card>
+                    </Card>
+                </Link>
             ))}
         </div>
     );

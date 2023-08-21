@@ -17,8 +17,8 @@ export const BlogPagination = () => {
             color: '#EEE2DC'
         }
     }
-    const ITEMS_PER_PAGE = 3;
-    const articles: Article[] = generateRandomArticles(20);
+    const ITEMS_PER_PAGE = 5;
+    const articles: Article[] = generateRandomArticles(50);
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = Math.ceil(articles.length / ITEMS_PER_PAGE);
 

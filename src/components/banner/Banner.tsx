@@ -12,7 +12,7 @@ const Banner: React.FC = () => {
                     Benvenuto in S.O.S UNI
                 </Typography>
                 <Typography variant="h5" className="bannerSubtitle">
-                    Facilita la tua vita universitaria connettendoti con gli altri studenti e tenendoti sempre informato
+                    Rendi più semplice la tua vita universitaria
                 </Typography>
             </Container>
         </Box>
