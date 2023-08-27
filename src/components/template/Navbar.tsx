@@ -45,7 +45,7 @@ export const Navbar = () => {
                             }}
                         >
                             <img
-                                src="./logo.png"
+                                src="/logo.png"
                                 alt="logo non trovato"
                                 height="50px"/>
                         </Typography>

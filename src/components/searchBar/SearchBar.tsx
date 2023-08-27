@@ -1,8 +1,6 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import parse from 'autosuggest-highlight/parse';
-import match from 'autosuggest-highlight/match';
 import './SearchBar.css';
 import {Link} from "react-router-dom";
 import Article from "../article/entity/Article";
@@ -24,7 +22,6 @@ export default function SearchBar() {
 
     return (
         <Autocomplete
-            id="highlights-demo"
             className="searchBar"
             options={articles}
             getOptionLabel={(option) => option.title}

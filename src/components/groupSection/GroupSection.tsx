@@ -14,7 +14,7 @@ const GroupSection: React.FC = () => {
                 <Grid container spacing={4}>
                     <Grid item xs={12} sm={6}>
                         <Box className="description">
-                            <Typography variant="h6">Connettiti subito con gli altri studenti che stanno preparando il tuo stesso esame</Typography>
+                            <Typography variant="h6">Connettiti subito con gli altri studenti e prepara al meglio il tuo esame</Typography>
                         </Box>
                     </Grid>
                     <Grid item xs={12} sm={6}>

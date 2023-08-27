@@ -9,7 +9,7 @@ export function generateRandomArticles(count: number): Article[] {
             i,
             `Titolo dell'articolo ${i}`,
             `Contenuto dell'articolo ${i}. Questo è un esempio di contenuto casuale.`,
-            `/images/article${i}.jpg`,
+            `/image-default.png`,
             new Date(new Date().getTime() - i * 1000000).toISOString().split('T')[0]
         );
 
