@@ -30,7 +30,7 @@ const ExamAccordion: React.FC<ExamAccordionProps> = ({ exam }) => (
                         variant="contained"
                         startIcon={<WhatsAppIcon />}
                         className="whatsapp"
-                        href={`https://chat.whatsapp.com/`}
+                        href={`https://www.whatsapp.com/`}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -42,7 +42,7 @@ const ExamAccordion: React.FC<ExamAccordionProps> = ({ exam }) => (
                         variant="contained"
                         startIcon={<FacebookIcon />}
                         className="facebook"
-                        href={`https://www.facebook.com/groups/create/`}
+                        href={`https://www.facebook.com/`}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -54,7 +54,7 @@ const ExamAccordion: React.FC<ExamAccordionProps> = ({ exam }) => (
                         variant="contained"
                         startIcon={<TelegramIcon />}
                         className="telegram"
-                        href={`https://t.me/joinchat/`}
+                        href={`https://web.telegram.org/`}
                         target="_blank"
                         rel="noopener noreferrer"
                     >

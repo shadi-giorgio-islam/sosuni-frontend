@@ -1,11 +1,11 @@
 import * as React from "react";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 import { Box } from "@mui/material";
 import './Footer.css';
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
     return (
@@ -14,51 +14,41 @@ export const Footer = () => {
                 <Grid container spacing={5}>
                     <Grid item xs={12} sm={4}>
                         <Typography variant="h6" gutterBottom>
-                            About Us
+                            About Me
                         </Typography>
                         <Typography variant="body2">
-                            We are XYZ company, dedicated to providing the best service to our
-                            customers.
+                            Ciao sono Giorgio, uno studente di CIM. Ho sviluppato questa applicazione per aiutare tutti i miei colleghi.
                         </Typography>
                     </Grid>
                     <Grid item xs={12} sm={4}>
                         <Typography variant="h6" gutterBottom>
-                            Contact Us
+                            Contact Me
                         </Typography>
                         <Typography variant="body2">
-                            123 Main Street, Anytown, USA
-                        </Typography>
-                        <Typography variant="body2">
-                            Email: info@example.com
-                        </Typography>
-                        <Typography variant="body2">
-                            Phone: +1 234 567 8901
+                            Email: shadigiorgio.islam01@universitadipavia.it
                         </Typography>
                     </Grid>
                     <Grid item xs={12} sm={4}>
                         <Typography variant="h6" gutterBottom>
-                            Follow Us
+                            Follow Me
                         </Typography>
-                        <Link href="https://www.facebook.com/">
+                        <Link to="https://www.facebook.com/">
                             <Facebook />
                         </Link>
                         <Link
-                            href="https://www.instagram.com/"
-                            sx={{ pl: 1, pr: 1 }}
+                            to="https://www.instagram.com/"
                         >
                             <Instagram />
                         </Link>
-                        <Link href="https://www.twitter.com/">
+                        <Link to="https://www.twitter.com/">
                             <Twitter />
                         </Link>
                     </Grid>
                 </Grid>
                 <Box mt={5}>
                     <Typography variant="body2" align="center">
-                        {"Copyright © "}
-                        <Link href="https://www.google.com/">
-                            Your Website
-                        </Link>{" "}
+                        {"Copyright ©"}
+                        <Link to="/">S.O.S UNI</Link>
                         {new Date().getFullYear()}
                         {"."}
                     </Typography>
