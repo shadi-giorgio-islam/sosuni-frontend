@@ -2,9 +2,9 @@
 
 .appbar{
     position: fixed !important;
+    z-index: 3 !important;
     top: 0;
     background-color: var(--secondocolore) !important;
-    z-index: 1;
 }
 
 a{

@@ -26,10 +26,10 @@ export default function SearchBar() {
             options={articles}
             getOptionLabel={(option) => option.title}
             renderInput={(params) => (
-                <TextField {...params} label="Cerca la tua università" margin="normal" sx={style}/>
+                <TextField {...params} label="Inserisci il titolo" margin="normal" sx={style}/>
             )}
             renderOption={(props, option) => (
-                <ListItem >
+                <ListItem className="listItem">
                     <Link to={`/article/${option.id}`}>
                         {option.title}
                     </Link>

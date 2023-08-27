@@ -4,6 +4,7 @@ import React from "react";
 import {useParams} from "react-router-dom";
 import Article from "./entity/Article";
 import {generateRandomArticles} from "./function/GenerateArticles";
+import "./ArticleContent.css";
 
 const ArticleContent: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -19,14 +20,15 @@ const ArticleContent: React.FC = () => {
 
     return (
             <Container>
-                <Typography variant="h2" component="h1" gutterBottom>
+                <Typography variant="h2" component="h1" className="titolo">
                     {article.title}
                 </Typography>
-                <img src={article.image} alt={`Immagine per ${article.title}`} style={{ width: '100%', height: 'auto' }} />
                 <Typography variant="subtitle2" color="textSecondary">
                     Data di pubblicazione: {article.publicationDate}
                 </Typography>
-                <Typography variant="body1" paragraph>
+                <div className="image">
+                </div>
+                <Typography variant="body1" className="content">
                     {article.content}
                 </Typography>
             </Container>

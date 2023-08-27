@@ -6,7 +6,6 @@ import SearchBar from "../components/searchBar/SearchBar";
 export const Blog = () => {
     return (
         <Template>
-            <SearchBar/>
             <BlogPagination/>
         </Template>
     );

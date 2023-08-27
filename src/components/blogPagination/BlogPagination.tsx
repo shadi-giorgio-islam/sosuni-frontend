@@ -6,6 +6,7 @@ import {generateRandomArticles} from "../article/function/GenerateArticles";
 import ArticleList from "../article/ArticleList";
 import "./BlogPagination.css";
 import Box from "@mui/material/Box";
+import SearchBar from "../searchBar/SearchBar";
 
 export const BlogPagination = () => {
     const style = {
@@ -31,7 +32,8 @@ export const BlogPagination = () => {
 
     return (
         <div className="blogPagination">
-            <h1>Blog</h1>
+            <h1 className="titoloBlogPage">Blog</h1>
+            <SearchBar/>
             <ArticleList articles={displayedArticles} />
 
             <Box display="flex" justifyContent="center" marginTop={2}>
