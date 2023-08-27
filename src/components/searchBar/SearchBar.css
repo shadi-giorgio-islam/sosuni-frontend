@@ -1,13 +1,3 @@
 .searchBar{
     width: 100%;
 }
-.titoloBlogPage{
-    text-align: center;
-    margin: auto;
-    padding: 20px 0;
-    color: var(--quintocolore);
-}
-
-.MuiAutocomplete-popper{
-    background-color: #25D366 !important;
-}

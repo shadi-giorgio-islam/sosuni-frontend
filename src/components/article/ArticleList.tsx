@@ -22,8 +22,15 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
                         <Typography variant="subtitle2" color="textSecondary">
                             Data di pubblicazione: {article.publicationDate}
                         </Typography>
-                        <Typography variant="body2">
+                        <Typography variant="body2" sx={{
+                           display: { xs: "none", md: "flex"}
+                        }}>
                             {article.content.substring(0, 300)}{article.content.length > 300 ? "..." : ""}
+                        </Typography>
+                        <Typography variant="body2" sx={{
+                            display: { md: "none" }
+                        }}>
+                            {article.content.substring(0, 50)}{article.content.length > 50 ? "..." : ""}
                         </Typography>
                     </CardContent>
                     </Card>

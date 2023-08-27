@@ -1,0 +1,17 @@
+.titoloAboutPage{
+    text-align: center;
+    margin: auto;
+    padding: 20px 0;
+    color: var(--primocolore);
+}
+.cardAbout{
+    width: 70%;
+    margin: 100px auto;
+    padding: 30px 50px 50px 50px;
+    background-color: var(--quintocolore) !important;
+}
+.contentAbout{
+    text-align: center;
+    margin: auto;
+    color: var(--primocolore);
+}
