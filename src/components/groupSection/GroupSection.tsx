@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import SearchIcon from '@mui/icons-material/Search';
 import React from "react";
+import {Link} from "react-router-dom";
 
 const GroupSection: React.FC = () => {
     return (
@@ -20,9 +21,8 @@ const GroupSection: React.FC = () => {
                     <Grid item xs={12} sm={6}>
                         <Box className="buttonContainer" textAlign='center'>
                             <Button variant="contained" className="sectionButton" endIcon={<SearchIcon />}>
-                                Cerca esame
+                                <Link to="/Gruppi">Cerca esame</Link>
                             </Button>
-
                         </Box>
                     </Grid>
                 </Grid>
