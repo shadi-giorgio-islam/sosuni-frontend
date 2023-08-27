@@ -1,9 +1,8 @@
 import Article from "../components/article/entity/Article";
 import {useParams} from "react-router-dom";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 import {generateRandomArticles} from "../components/article/function/GenerateArticles";
 import Template from "../components/template/Template";
+import ArticleContent from "../components/article/ArticleContent";
 
 const ArticlePage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -19,19 +18,7 @@ const ArticlePage: React.FC = () => {
 
     return (
         <Template>
-            <Container>
-                <Typography variant="h2" component="h1" gutterBottom>
-                    {article.title}
-                </Typography>
-                <img src={article.image} alt={`Immagine per ${article.title}`} style={{ width: '100%', height: 'auto' }} />
-                <Typography variant="subtitle2" color="textSecondary">
-                    Data di pubblicazione: {article.publicationDate}
-                </Typography>
-                <Typography variant="body1" paragraph>
-                    {article.content}
-                </Typography>
-            </Container>
-            );
+            <ArticleContent/>
         </Template>
     )
 };
